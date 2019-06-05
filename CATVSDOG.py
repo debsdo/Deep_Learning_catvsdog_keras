@@ -90,18 +90,9 @@ for layer in model.layers:
 
 # In[9]:
 
-
-#top_model = Sequential()
-#top_model.add(Flatten(input_shape=model.output_shape[1:]))
-#top_model.add(Dense(256, activation='relu'))
-#top_model.add(Dropout(0.5))
-#top_model.add(Dense(1, activation='sigmoid'))
-#model.summary()
-
-#model.add(GlobalMaxPooling2D())
 model.add(Dense(256, activation = "relu"))
 model.add(Dropout(0.5))
-model.add(Dense(1, activation = "sigmoid")) #as there are 9 classes
+model.add(Dense(1, activation = "sigmoid")) #2 classes
 model.summary()
 
 
@@ -147,8 +138,6 @@ model.fit_generator(
     validation_data=validation_generator,
     nb_val_samples=nb_validation_samples)
 
-
-# In[ ]:
 
 
 
